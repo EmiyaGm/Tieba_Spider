@@ -3,7 +3,7 @@
 import scrapy
 import json
 from tieba.items import ThreadItem, PostItem, CommentItem
-import helper
+from . import helper
 import time
 
 class TiebaSpider(scrapy.Spider):

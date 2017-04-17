@@ -1,9 +1,9 @@
 {
-    "MYSQL_USER": "root", 
-    "MYSQL_PASSWD": "123456", 
-    "DEFAULT_TIEBA": "仙五前修改", 
+    "MYSQL_USER": "root",
+    "MYSQL_PASSWD": "1234567890",
+    "DEFAULT_TIEBA": "常熟理工学院",
     "MYSQL_DBNAME": {
-        "仙五前修改": "Pal5Q_Diy"
-    }, 
+        "常熟理工学院": "scrapy"
+    },
     "MYSQL_HOST": "localhost"
 }

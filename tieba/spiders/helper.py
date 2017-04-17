@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import re
-import urllib2
+import urllib.request
 from bs4 import BeautifulSoup
-import emotion
+from . import emotion
 
 
 def is_ad(s): #判断楼层是否为广告
@@ -73,15 +73,15 @@ def other_case(s):
 
 # 发送请求到 jump.bdimg.com/.. 来获取真实链接
 # 阻止302跳转后可以大大节省时间 
-class RedirctHandler(urllib2.HTTPRedirectHandler):      
+class RedirctHandler(urllib.request.HTTPRedirectHandler):
     def http_error_302(self, req, fp, code, msg, headers):  
         raise Exception(headers.getheaders('location')[0])
 
 def getJumpUrl(url):    
-    req = urllib2.Request(url)    
-    debug_handler = urllib2.HTTPHandler()    
-    opener = urllib2.build_opener(debug_handler, RedirctHandler)      
+    req = urllib.request.Request(url)
+    debug_handler = urllib.request.HTTPHandler()
+    opener = urllib.request.build_opener(debug_handler, RedirctHandler)
     try:    
         opener.open(url)
-    except Exception, e:
+    except Exception as e:
         return unicode(e)
