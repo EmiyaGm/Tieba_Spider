@@ -4,9 +4,8 @@
 2017.3.23更新：修改了页选项参数形式，增加了只看楼主、只爬精品和自定义过滤帖子功能。
 
 ## 系统及依赖参考
-Ubuntu 14.04.4 64-bit
 
-Python 2.7.6
+Python 3.6
 
 mysql Ver 14.14 Distrib 5.5.53
 
@@ -18,7 +17,7 @@ Twisted (16.6.0)
 
 Scrapy 1.3.0
 
-MySQL-python (1.2.5)
+pymysql
 
 ## 使用方法
 先打开config.json文件，在其中配置好数据库的域名、用户名和密码。接着直接运行命令即可：
@@ -30,6 +29,8 @@ scrapy run <贴吧名> <数据库名> <选项>
 scrapy run 仙五前修改 Pal5Q_Diy
 ```
 若在config.json里面已经配置好贴吧名和对应数据库名，则可以忽略数据库名。若忽略贴吧名，则爬取config.json里面DEFAULT的数据库。
+
+数据库必须提前建好
 
 **特别提醒** 任务一旦断开，不可继续进行。因此SSH打开任务时，请保证不要断开连接，或者考虑使用后台任务或者screen命令等。
 
@@ -129,12 +130,9 @@ scrapy run 仙剑五外传 -gs -p 5 12 -f thread_filter
 
 [Twisted adbapi 源代码][5]
 
-有什么问题或建议欢迎到[我的主页][6]留言~
-
 
   [1]: http://scrapy-chs.readthedocs.io/zh_CN/1.0/
   [2]: https://coding.net/u/fmyl/p/scrapy
   [3]: https://cuiqingcai.com/1319.html
   [4]: http://www.cnblogs.com/numbbbbb/p/3434519.html
   [5]: https://github.com/twisted/twisted/blob/twisted-16.5.0/src/twisted/enterprise/adbapi.py
-  [6]: http://aqua.hk.cn
