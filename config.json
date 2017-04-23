@@ -3,7 +3,18 @@
     "MYSQL_PASSWD": "1234567890",
     "DEFAULT_TIEBA": "常熟理工学院",
     "MYSQL_DBNAME": {
-        "常熟理工学院": "scrapy"
+        "常熟理工学院": "cslg",
+        "仙五前修改": "Pal5Q_Diy",
+        "北京大学": "pku",
+        "清华大学": "tsinghua",
+        "四川大学": "scu",
+        "武汉大学": "whu",
+        "厦门大学": "xmu",
+        "华中科技大学": "hust",
+        "浙江大学": "zju",
+        "上海交通大学": "sjtu",
+        "南京大学": "nju",
+        "复旦大学": "fudan"
     },
     "MYSQL_HOST": "localhost"
 }

@@ -6,7 +6,7 @@
 # ex:
 
 def thread_filter(id, title, author, reply_num, good):
-    return reply_num > 30
+    return reply_num > 10
     
     
 # > scrapy run hadoop hadoop -f thread_filter

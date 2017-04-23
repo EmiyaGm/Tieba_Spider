@@ -43,7 +43,7 @@ def is_str(s):
     if s.name: 
         return False
     #NavigableString类型需要手动转换下
-    return unicode(s)
+    return str(s)
 
 def is_br(s):
     if s.name == 'br':
@@ -53,12 +53,12 @@ def is_br(s):
 def is_img(s):
     # 处理了部分表情
     if s.name == 'img':
-        src = unicode(s.get('src'))
+        src = str(s.get('src'))
         return emotion.get_text(src)
     return False
 
 def is_video(s):
-    t = unicode(s.get('class'))
+    t = str(s.get('class'))
     if 'video' in t:
         url = s.find('a').get('href')
         return ' ' + getJumpUrl(url) + ' '
@@ -84,4 +84,4 @@ def getJumpUrl(url):
     try:    
         opener.open(url)
     except Exception as e:
-        return unicode(e)
+        return str(e)

@@ -36,9 +36,11 @@ class TiebaSpider(scrapy.Spider):
             yield scrapy.Request(url, callback = self.parse_post,  meta = meta)
         next_page = response.xpath('//a[@class="next pagination-item "]/@href')
         self.cur_page += 1
+        print(next_page.extract_first())
+        print('-------------------')
         if next_page:
             if self.cur_page <= self.end_page:
-                yield self.make_requests_from_url(next_page.extract_first())
+                yield self.make_requests_from_url("http:"+next_page.extract_first())
             
     def parse_post(self, response): 
         meta = response.meta
